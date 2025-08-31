@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcowaveStaffing.com</title>
+  
+  <!-- Import Canada Type Gibson Font -->
+  <link rel="stylesheet" href="https://use.typekit.net/lws3aau.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "canada-type-gibson", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: black;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #0A1E27;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 120px;
+    }
+
+    .logo img {
+      width: 175px;
+      height: 80px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #D2EBE7;
+      text-decoration: none;
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .nav-link-others {
+      color: #D2EBE7;
+      text-decoration: none;
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 300;
+      font-size: 20px;
+    }
+
+    .nav-link:hover {
+      color: #555;
+    }
+
+    /* Mobile menu */
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: black;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-menu.active {
+        transform: translateX(0);
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero section */
+    .hero-section {
+      height: 100vh;
+      background: url('./img/pricing/pricing.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .hero-content {
+      color: black;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .hero-title {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 56px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero-sub-title {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 20px;
+      font-weight:300;
+      margin-bottom: 20px;
+      line-height: 24px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1D9A8A;
+      color: #D2EBE7;
+      padding: 10px 40px;
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    /* New Section Styles */
+    .offshore-section {
+      padding: 50px 0;
+      background-color: white;
+      text-align: center;
+    }
+
+    .offshore-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .offshore-title {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 40px;
+      margin-bottom: 15px;
+      color: #1D9A8A;
+    }
+
+    .offshore-subtittle{
+        font-family: "canada-type-gibson", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .offshore-subtittle p{
+        font-family: "canada-type-gibson", sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    /* Solutions Section */
+    .solutions-section {
+      background-color: white;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #0A1E27;
+    }
+
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .solution-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: left;
+      transition: transform 0.3s ease;
+      height: 280px;
+    }
+
+    .solution-card.red {
+      background: #0A1E27;
+    }
+
+    .solution-card.black {
+      background: #1D9A8A;
+    }
+
+    .solution-card.red h3,
+    .solution-card.red p,
+    .solution-card.red .learn-more {
+      color: white;
+    }
+
+    .solution-card.black h3,
+    .solution-card.black p,
+    .solution-card.black .learn-more {
+      color: white;
+    }
+
+
+    .solution-card h3 {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #0A1E27;
+    }
+
+    .solution-card p {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    .learn-more {
+      display: inline-flex;
+      align-items: center;
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1D9A8A;
+      text-decoration: none;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+
+    .arrow {
+      margin-left: 8px;
+      font-weight: bold;
+    }
+
+    /* How It Works Section - IMPROVED RESPONSIVE VERSION */
+    .how-it-works-section {
+      padding: 50px 0;
+      background-color: white;
+      text-align: center;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .process-step {
+      background: #FFF7BB66;
+      border-radius: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      min-height: 400px;
+    }
+
+
+    .step-icon {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px 10px 0px 0px;
+      margin-bottom: 20px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: #1D9A8A;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .process-step h3 {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 15px;
+      color: #0A1E27;
+    }
+
+    .process-step p {
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 100%;
+      color: black;
+    }
+
+    /* Large Desktop Responsive */
+    @media (min-width: 1200px) {
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      
+      .step-icon {
+        height: 220px;
+      }
+    }
+
+    /* Desktop Responsive */
+    @media (max-width: 1199px) and (min-width: 901px) {
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      
+      .step-icon {
+        height: 180px;
+      }
+      
+      .process-step {
+        min-height: 350px;
+      }
+    }
+
+    .hw-s{
+      padding: 20px;
+    }
+
+    .footer {
+      background-color: #0A1E27;
+      color: #D2EBE7;
+      padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      width: 175px;
+      margin-bottom: 20px;
+    }
+
+    .footer-menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+      max-width: 30%;
+    }
+
+    .footer-link {
+      color: #D2EBE7;
+      text-decoration: none;
+      font-weight: 300;
+      font-family: "canada-type-gibson", sans-serif;
+    }
+
+    .footer-signup {
+      margin-top: 20px;
+      width: 55%;
+    }
+
+    .input-with-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .email-icon {
+      position: absolute;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .signup-input {
+      padding: 12px 120px 12px 45px;
+      border-radius: 25px;
+      border: none;
+      width: 100%;
+      background: white;
+      color: #0A1E27;
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 14px;
+    }
+
+    .signup-button {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 8px 24px;
+      border-radius: 20px;
+      border: none;
+      background: #1D9A8A;
+      color: #D2EBE7;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: "canada-type-gibson", sans-serif;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.3s ease;
+    }
+
+    .signup-button:hover {
+      background: #168577;
+    }
+
+    .footer-contact h4 {
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-contact p {
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      text-align: end;
+      color: white;
+      letter-spacing: -2%;
+    }
+    .footer-contact {
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 300;
+      margin-bottom: 10px;
+      font-size: 14px;
+      align-content: end;
+    }
+
+    .copyright {
+      text-align: end;
+      font-size: 14px;
+      font-family: "canada-type-gibson", sans-serif;
+      font-weight: 700;
+      color: white;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .signup-input {
+        padding-right: 130px;
+      }
+      
+      .signup-button {
+        right: 5px;
+      }
+      
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-contact {
+        text-align: center;
+      }
+      
+      .footer-menu {
+        justify-content: center;
+      }
+    }
+
+    .signup-input::placeholder {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <img src="./img/logo/logo.svg" alt="Logo">
+      </a>
+      
+<ul class="nav-menu">
+  <li><a href="/index.html" class="nav-link"> Home </a></li>
+  <li><a href="/about.html" class="nav-link-others">About</a></li>
+  <li><a href="/pricing.html" class="nav-link-others">Pricing</a></li>
+  <li><a href="/contact.html" class="nav-contact">
+    <img src="img/Contact.svg" alt="Contact" class="contact-icon">
+  </a></li>
+</ul>
+
+      <button class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Transparent pricing, <br>tailored to your needs.</h1>
+        <h3 class="hero-sub-title">Budget friendly pricing to get your project moving.</h3>
+        <p class="hero-subtitle">
+         We believe in clarity from the start. No hidden fees, no surprises—just straightforward pricing that reflects the value we deliver.
+        </p>
+        <a href="#" class="cta-button">Find talent</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Offshore Section -->
+  <section class="offshore-section">
+    <div class="container">
+      <div class="offshore-content">
+        <h2 class="offshore-title">We have a pricing solution <br>that will work for you.</h2>
+        <p class="offshore-subtittle">At Ecowave Staffing, we don’t believe in cookie-cutter recruitment. Every business is different, and so is every hire. That’s why our pricing is built to reflect the complexity, urgency, and scale of your needs. Whether you're hiring one logistics coordinator or building a remote operations team across time zones, we offer flexible models that grow with you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section class="solutions-section">
+    <div class="container">
+      <h2 class="section-title">The solutions we deliver.</h2>
+      
+      <div class="solutions-grid">
+        <div class="solution-card red">
+          <h3>Operation Specialists</h3>
+          <p>Staff experienced in freight forwarding and logistics.</p>
+          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+        </div>
+        
+        <div class="solution-card black">
+          <h3>Local Time Zone Coverage</h3>
+          <p>Connectors align with your business hours.</p>
+          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+        </div>
+        
+        <div class="solution-card red">
+          <h3>Industry Tools</h3>
+          <p>Many of our candidates already trained on CargoWise.</p>
+          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+        </div>
+        
+        <div class="solution-card black">
+          <h3>Fully Managed</h3>
+          <p>We employ the contractors, you just get the work done.</p>
+          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="./img/logo/logo.svg" alt="Logo" class="footer-logo">
+          <div class="footer-menu">
+            <a href="#home" class="footer-link">Home</a>
+            <a href="#about" class="footer-link">About</a>
+            <a href="#pricing" class="footer-link">Pricing</a>
+            <a href="#contact" class="footer-link">Contact</a>
+          </div>
+          <div class="footer-signup">
+            <div class="signup-form">
+              <div class="input-with-icon">
+                <img src="img/mail.svg" alt="Email" class="email-icon">
+                <input type="email" placeholder="Enter your email & join us" class="signup-input">
+                <button class="signup-button">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-contact">
+          <p class="copyright"> A recruitment partner for the logistics world.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
