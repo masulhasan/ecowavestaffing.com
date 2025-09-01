@@ -157,7 +157,7 @@
       line-height: 24px;
     }
 
-    .cta-button {
+    .cta-button-hero {
       display: inline-block;
       background: #1D9A8A;
       color: #D2EBE7;
@@ -538,6 +538,159 @@
     .signup-input::placeholder {
       color: black;
     }
+
+     .pricing-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 50px
+    }
+
+    .pricing-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      border-radius: 24px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pricing-card.engage,
+    .pricing-card.meet {
+      background: linear-gradient(135deg, #1D9A8A 0%, #16A085 100%);
+      color: white;
+    }
+
+    .pricing-card.workflow {
+      background: white;
+      color: #333;
+      border: 2px solid #e5e7eb;
+    }
+
+    .card-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 71px;
+      height: 71px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 10px 0 10px;
+    }
+
+    .card-icon img {
+      width: 71px;
+      height: 71px;
+    }
+
+    .card-header { margin: 16px 0 32px; }
+
+    .plan-name {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .price {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .price-period {
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .workflow .price-period { color: #666; }
+
+    .card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .features-list {
+      list-style: none;
+      margin-bottom: 40px;
+      flex-grow: 1;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .feature-icon {
+      width: 6px;
+      height: 6px;
+      background: currentColor;
+      border-radius: 50%;
+      margin-right: 16px;
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .workflow .feature-icon { background: #666; }
+
+    .cta-button {
+      background: rgba(0,0,0,0.15);
+      color: white;
+      border: none;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .workflow .cta-button {
+      background: transparent;
+      color: #333;
+      border: 2px solid #e5e7eb;
+    }
+
+    .cta-button:hover {
+      background: rgba(0,0,0,0.25);
+      transform: translateY(-2px);
+    }
+
+    .workflow .cta-button:hover {
+      background: #f9fafb;
+      border-color: #d1d5db;
+    }
+
+    .engage .cta-button,
+    .meet .cta-button { background: rgba(0,0,0,0.2); }
+
+    .engage .cta-button:hover,
+    .meet .cta-button:hover { background: rgba(0,0,0,0.3); }
+
+    @media (max-width: 768px) {
+      .pricing-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -574,7 +727,7 @@
         <p class="hero-subtitle">
          We believe in clarity from the start. No hidden fees, no surprises—just straightforward pricing that reflects the value we deliver.
         </p>
-        <a href="#" class="cta-button">Find talent</a>
+        <a href="#" class="cta-button-hero">Find talent</a>
       </div>
     </div>
   </section>
@@ -589,39 +742,71 @@
     </div>
   </section>
 
-  <!-- Solutions Section -->
-  <section class="solutions-section">
-    <div class="container">
-      <h2 class="section-title">The solutions we deliver.</h2>
+ <!-- Pricing Section -->
+  <section class="pricing-section">
+    <div class="pricing-container">
       
-      <div class="solutions-grid">
-        <div class="solution-card red">
-          <h3>Operation Specialists</h3>
-          <p>Staff experienced in freight forwarding and logistics.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+      <!-- Engage -->
+      <div class="pricing-card engage">
+        <div class="card-icon">
+          <img src="img/pricing/Arrow 1.svg" alt="Arrow Icon">
         </div>
-        
-        <div class="solution-card black">
-          <h3>Local Time Zone Coverage</h3>
-          <p>Connectors align with your business hours.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
-        </div>
-        
-        <div class="solution-card red">
-          <h3>Industry Tools</h3>
-          <p>Many of our candidates already trained on CargoWise.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
-        </div>
-        
-        <div class="solution-card black">
-          <h3>Fully Managed</h3>
-          <p>We employ the contractors, you just get the work done.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="plan-name">Engage</div>
+            <div class="price">£56<span class="price-period">/Week</span></div>
+          </div>
+          <ul class="features-list">
+            <li class="feature-item"><span class="feature-icon"></span>Access To Basic Features</li>
+            <li class="feature-item"><span class="feature-icon"></span>Basic Reporting And Analytics</li>
+            <li class="feature-item"><span class="feature-icon"></span>Up To 10 Individual Users</li>
+          </ul>
+          <a href="#" class="cta-button">Get Started</a>
         </div>
       </div>
+
+      <!-- Workflow -->
+      <div class="pricing-card workflow">
+        <div class="card-icon">
+          <img src="img/pricing/Arrow 1.svg" alt="Arrow Icon">
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="plan-name">Workflow</div>
+            <div class="price">£75<span class="price-period">/Month</span></div>
+          </div>
+          <ul class="features-list">
+            <li class="feature-item"><span class="feature-icon"></span>Access To Basic Features</li>
+            <li class="feature-item"><span class="feature-icon"></span>Basic Reporting And Analytics</li>
+            <li class="feature-item"><span class="feature-icon"></span>Up To 20 Individual Users</li>
+            <li class="feature-item"><span class="feature-icon"></span>Basic Chat And Email Support</li>
+          </ul>
+          <a href="#" class="cta-button">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Meet -->
+      <div class="pricing-card meet">
+        <div class="card-icon">
+          <img src="img/pricing/Arrow 1.svg" alt="Arrow Icon">
+        </div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="plan-name">Meet</div>
+            <div class="price">£86<span class="price-period">/Yearly</span></div>
+          </div>
+          <ul class="features-list">
+            <li class="feature-item"><span class="feature-icon"></span>Access To Basic Features</li>
+            <li class="feature-item"><span class="feature-icon"></span>Basic Reporting And Analytics</li>
+            <li class="feature-item"><span class="feature-icon"></span>Up To 30 Individual Users</li>
+            <li class="feature-item"><span class="feature-icon"></span>Basic Chat And Email Support</li>
+          </ul>
+          <a href="#" class="cta-button">Get Started</a>
+        </div>
+      </div>
+
     </div>
   </section>
-
 
   <!-- Footer Section -->
   <footer class="footer">
