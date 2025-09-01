@@ -62,16 +62,33 @@
       font-weight: 600;
       font-size: 20px;
     }
-    .nav-link-others {
-      color: #D2EBE7;
-      text-decoration: none;
-      font-family: "canada-type-gibson", sans-serif;
-      font-weight: 300;
-      font-size: 20px;
-    }
+.nav-link-others {
+  color: #D2EBE7;
+  text-decoration: none;
+  font-family: "canada-type-gibson", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  position: relative;
+}
+
+.nav-link-others::before {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+
+.nav-link-others:hover {
+  color: #059a89;
+  font-weight: 600;
+}
 
     .nav-link:hover {
-      color: #555;
+      color: #059a89;
     }
 
     /* Mobile menu */
@@ -409,6 +426,7 @@
     .footer-logo {
       width: 175px;
       margin-bottom: 20px;
+      margin-left: -10px;
     }
 
     .footer-menu {
@@ -473,7 +491,6 @@
       font-family: "canada-type-gibson", sans-serif;
       font-size: 14px;
       white-space: nowrap;
-      transition: background 0.3s ease;
     }
 
     .signup-button:hover {
@@ -697,14 +714,14 @@
   <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">
+      <a href="/index.html" class="logo">
         <img src="./img/logo/logo.svg" alt="Logo">
       </a>
       
 <ul class="nav-menu">
-  <li><a href="/index.html" class="nav-link"> Home </a></li>
-  <li><a href="/about.html" class="nav-link-others">About</a></li>
-  <li><a href="/pricing.html" class="nav-link-others">Pricing</a></li>
+  <li><a href="/index.html" class="nav-link-others" data-text="About" > Home </a></li>
+  <li><a href="/about.html" class="nav-link-others" data-text="Pricing">About</a></li>
+  <li><a href="/pricing.html" class="nav-link">Pricing</a></li>
   <li><a href="/contact.html" class="nav-contact">
     <img src="img/Contact.svg" alt="Contact" class="contact-icon">
   </a></li>

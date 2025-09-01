@@ -63,10 +63,27 @@ body {
   text-decoration: none;
   font-weight: 300;
   font-size: 20px;
+  position: relative;
+}
+
+.nav-link-others::before {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  display: block;
 }
 
 .nav-link:hover {
-  opacity: .85;
+ color: #059a89;
+}
+
+.nav-link-others:hover {
+  color: #059a89;
+  font-weight: 600;
 }
 
 .mobile-menu-toggle {
@@ -410,6 +427,7 @@ body {
 .footer-logo {
   width: 175px;
   margin-bottom: 20px;
+  margin-left: -10px;
 }
 
 .footer-menu {
@@ -552,11 +570,11 @@ body {
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" class="logo"><img src="./img/logo/logo.svg" alt="Logo"></a>
+      <a href="/index.html" class="logo"><img src="./img/logo/logo.svg" alt="Logo"></a>
 <ul class="nav-menu">
-  <li><a href="/index.html" class="nav-link"> Home </a></li>
-  <li><a href="/about.html" class="nav-link-others">About</a></li>
-  <li><a href="/pricing.html" class="nav-link-others">Pricing</a></li>
+  <li><a href="/index.html" class="nav-link-others" data-text="About"> Home </a></li>
+  <li><a href="/about.html" class="nav-link">About</a></li>
+<li><a href="/pricing.html" class="nav-link-others" data-text="Pricing">Pricing</a></li>
   <li><a href="/contact.html" class="nav-contact">
     <img src="img/Contact.svg" alt="Contact" class="contact-icon">
   </a></li>
