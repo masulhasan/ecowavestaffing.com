@@ -65,8 +65,24 @@ body {
   font-size: 20px;
 }
 
+.nav-link-others::before {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+
 .nav-link:hover {
-  opacity: .85;
+  color: #059a89;
+}
+
+.nav-link-others:hover {
+  color: #059a89;
+  font-weight: 600;
 }
 
 .mobile-menu-toggle {
@@ -108,11 +124,11 @@ body {
 }
 
 .hero-section {
-  height: 100vh;
+  height: 90vh;
   background: url('./img/contact/contact-bg.png') center/cover no-repeat;
   display: flex;
   align-items: center;
-  padding-top: 70px;
+  margin-top: 120px;
 }
 
 .container {
@@ -553,9 +569,9 @@ textarea {
     <div class="nav-container">
       <a href="/" class="logo"><img src="./img/logo/logo.svg" alt="Logo"></a>
 <ul class="nav-menu">
-  <li><a href="/index.html" class="nav-link"> Home </a></li>
-  <li><a href="/about.html" class="nav-link-others">About</a></li>
-  <li><a href="/pricing.html" class="nav-link-others">Pricing</a></li>
+  <li><a href="/index.html" class="nav-link-others" data-text="Home"> Home </a></li>
+  <li><a href="/about.html" class="nav-link-others" data-text="About">About</a></li>
+  <li><a href="/pricing.html" class="nav-link-others" data-text="Pricing">Pricing</a></li>
   <li><a href="/contact.html" class="nav-contact">
     <img src="img/Contact.svg" alt="Contact" class="contact-icon">
   </a></li>
