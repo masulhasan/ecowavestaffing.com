@@ -7,6 +7,7 @@
   
   <!-- Import Canada Type Gibson Font -->
   <link rel="stylesheet" href="https://use.typekit.net/lws3aau.css">
+  <link rel="stylesheet" href="/css/footer/footer-signup.css">
   
   <style>
     * {
@@ -51,7 +52,7 @@
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 80px;
+      gap: 75px;
       align-items: center;
     }
 
@@ -67,10 +68,30 @@
       color: #D2EBE7;
       text-decoration: none;
       font-family: "canada-type-gibson", sans-serif;
-      font-weight: 300;
+      font-weight: 200;
       font-size: 20px;
       position: relative;
     }
+
+    /* Add this to your <style> section */
+.nav-contact-btn {
+  display: inline-block;
+  padding: 5px 20px;
+  border: 1px solid #1D9A8A;
+  border-radius: 10px 10px 0px 10px;
+  background: transparent;
+  color: #D2EBE7;
+  font-family: "canada-type-gibson", sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.nav-contact-btn:hover {
+  background: #059a89;
+  color: #fff;
+  border-color: #059a89;
+}
 
     /* Fix for preventing layout shift on hover */
     .nav-link-others::before {
@@ -144,34 +165,34 @@
     }
 
     .container {
-      width: 90%;
+      width: 88%;
       margin: 0 auto;
-      padding: 0 16px;
     }
 
     .hero-content {
       color: black;
       max-width: 600px;
       text-align: left;
+      line-height: 60px;
     }
 
     .hero-title {
       font-family: "canada-type-gibson", sans-serif;
       font-size: 56px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     .hero-sub-title {
       font-family: "canada-type-gibson", sans-serif;
       font-size: 28px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .hero-subtitle {
       font-family: "canada-type-gibson", sans-serif;
       font-size: 20px;
-      font-weight:300;
+      font-weight:200;
       margin-bottom: 20px;
       line-height: 24px;
     }
@@ -186,13 +207,15 @@
       font-weight: 600;
       text-decoration: none;
       border-radius: 10px;
+      line-height: 100%;
     }
 
     /* New Section Styles */
     .offshore-section {
-      padding: 50px 0;
+      padding: 100px 0;
       background-color: white;
       text-align: center;
+      letter-spacing: 0%;
     }
 
     .offshore-content {
@@ -230,7 +253,7 @@
       font-family: "canada-type-gibson", sans-serif;
       font-size: 36px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       color: #0A1E27;
     }
 
@@ -238,9 +261,8 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 30px;
-      max-width: 1500px;
+      max-width: 2100px;
       margin: 0 auto;
-      padding: 0 20px;
     }
 
     .solution-card {
@@ -248,8 +270,10 @@
       border-radius: 18px;
       padding: 30px;
       text-align: left;
-      transition: transform 0.3s ease;
       height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .solution-card.red {
@@ -283,26 +307,24 @@
 
     .solution-card p {
       font-family: "canada-type-gibson", sans-serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 300;
       margin-bottom: 20px;
-      line-height: 1.5;
-      color: #555;
+      line-height: 100%;
     }
 
     .learn-more {
       display: inline-flex;
       align-items: center;
       font-family: "canada-type-gibson", sans-serif;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 20px;
+      font-weight: 400;
       color: #1D9A8A;
       text-decoration: none;
+      line-height: 130%;
+      letter-spacing: -4%;
     }
 
-    .learn-more:hover {
-      text-decoration: underline;
-    }
 
     .arrow {
       margin-left: 8px;
@@ -311,7 +333,7 @@
 
     /* How It Works Section - IMPROVED RESPONSIVE VERSION */
     .how-it-works-section {
-      padding: 50px 0;
+      padding: 100px 0;
       background-color: white;
       text-align: center;
     }
@@ -319,10 +341,9 @@
     .process-steps {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      max-width: 1400px;
+      gap: 50px;
+      max-width: 2100px;
       margin: 0 auto;
-      padding: 0 20px;
     }
 
     .process-step {
@@ -384,7 +405,7 @@
     @media (min-width: 1200px) {
       .process-steps {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        gap: 50px;
       }
       
       .step-icon {
@@ -426,29 +447,14 @@
     }
 
     .footer-logo {
-      width: 175px;
-      margin-bottom: 20px;
+      width: 160px;
+      height: 70px;
       margin-left: -10px;
-    }
-
-    .footer-menu {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-      max-width: 30%;
-    }
-
-    .footer-link {
-      color: #D2EBE7;
-      text-decoration: none;
-      font-weight: 300;
-      font-family: "canada-type-gibson", sans-serif;
     }
 
     .footer-signup {
       margin-top: 20px;
-      width: 55%;
+      width: 65%;
     }
 
     .input-with-icon {
@@ -460,22 +466,23 @@
 
     .email-icon {
       position: absolute;
-      left: 15px;
-      width: 20px;
-      height: 20px;
+      left: 25px;
+      width: 24px;
+      height: 24px;
       pointer-events: none;
       z-index: 1;
     }
 
     .signup-input {
-      padding: 12px 120px 12px 45px;
-      border-radius: 25px;
+      padding: 20px 120px 20px 65px;
+      border-radius: 75px;
       border: none;
       width: 100%;
       background: white;
       color: #0A1E27;
       font-family: "canada-type-gibson", sans-serif;
-      font-size: 14px;
+      font-size: 18px;
+      line-height: 145%;
     }
 
     .signup-button {
@@ -483,17 +490,17 @@
       right: 5px;
       top: 50%;
       transform: translateY(-50%);
-      padding: 8px 24px;
-      border-radius: 20px;
+      padding: 15px 35px;
+      border-radius: 31px;
       border: none;
       background: #1D9A8A;
       color: #D2EBE7;
       cursor: pointer;
       font-weight: 600;
       font-family: "canada-type-gibson", sans-serif;
-      font-size: 14px;
+      font-size: 20px;
       white-space: nowrap;
-      transition: background 0.3s ease;
+      font-weight: 300;
     }
 
     .signup-button:hover {
@@ -550,14 +557,50 @@
         text-align: center;
       }
       
-      .footer-menu {
-        justify-content: center;
-      }
     }
 
     .signup-input::placeholder {
       color: black;
     }
+
+    /* Add to your <style> section */
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 30px; /* 30px gap between columns */
+  row-gap: 10px;    /* less gap between rows */
+  margin-top: 20px;
+  margin-bottom: 30px;
+  max-width: 350px;
+}
+
+.footer-link {
+  flex: 1 1 45%;
+  max-width: 150px; /* Set max width for each link */
+  color: #ffffff;
+  font-family: "canada-type-gibson", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 0;
+  font-weight: 200;
+}
+.footer-link-main {
+  flex: 1 1 45%;
+  max-width: 150px; /* Set max width for each link */
+  color: #ffffff;
+  font-family: "canada-type-gibson", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.custom-placeholder::placeholder {
+  color: #0A1E27;
+  font-size: 18px;
+  font-family: "canada-type-gibson", sans-serif;
+}
+
   </style>
 </head>
 <body>
@@ -572,9 +615,7 @@
   <li><a href="/index.html" class="nav-link-others" data-text="Home"> Home </a></li>
   <li><a href="/about.html" class="nav-link-others" data-text="About">About</a></li>
   <li><a href="/pricing.html" class="nav-link-others" data-text="Pricing">Pricing</a></li>
-  <li><a href="/contact.html" class="nav-contact">
-    <img src="img/Contact.svg" alt="Contact" class="contact-icon">
-  </a></li>
+  <li><a href="/contact.html" class="nav-contact-btn" data-text="Contact">Contact</a></li>
 </ul>
 
       <button class="mobile-menu-toggle">
@@ -616,27 +657,39 @@
       
       <div class="solutions-grid">
         <div class="solution-card red">
-          <h3>Operation Specialists</h3>
+          <h3>Operation <br>Specialists</h3>
           <p>Staff experienced in freight forwarding and logistics.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+         <a href="#" class="learn-more">
+  Learn More
+  <img src="img/home/arrow.svg" alt="Arrow" style="margin-left:8px; width:24px; height:24px;">
+</a>
         </div>
         
         <div class="solution-card black">
-          <h3>Local Time Zone Coverage</h3>
+          <h3>Local Time<br> Zone Coverage</h3>
           <p>Connectors align with your business hours.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+                  <a href="#" class="learn-more">
+  Learn More
+  <img src="img/home/arrow.svg" alt="Arrow" style="margin-left:8px; width:24px; height:24px;">
+</a>
         </div>
         
         <div class="solution-card red">
-          <h3>Industry Tools</h3>
+          <h3>Industry<br> Tools</h3>
           <p>Many of our candidates already trained on CargoWise.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+                  <a href="#" class="learn-more">
+  Learn More
+  <img src="img/home/arrow.svg" alt="Arrow" style="margin-left:8px; width:24px; height:24px;">
+</a>
         </div>
         
         <div class="solution-card black">
-          <h3>Fully Managed</h3>
+          <h3>Fully<br> Managed</h3>
           <p>We employ the contractors, you just get the work done.</p>
-          <a href="#" class="learn-more">Learn More <span class="arrow">→</span></a>
+                 <a href="#" class="learn-more">
+  Learn More
+  <img src="img/home/arrow.svg" alt="Arrow" style="margin-left:8px; width:24px; height:24px;">
+</a>
         </div>
       </div>
     </div>
@@ -687,24 +740,27 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div>
-          <img src="./img/logo/logo.svg" alt="Logo" class="footer-logo">
-          <div class="footer-menu">
-            <a href="#home" class="footer-link">Home</a>
-            <a href="#about" class="footer-link">About</a>
-            <a href="#pricing" class="footer-link">Pricing</a>
-            <a href="#contact" class="footer-link">Contact</a>
-          </div>
-          <div class="footer-signup">
-            <div class="signup-form">
-              <div class="input-with-icon">
-                <img src="img/mail.svg" alt="Email" class="email-icon">
-                <input type="email" placeholder="Enter your email & join us" class="signup-input">
-                <button class="signup-button">Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
+<div>
+  <img src="./img/logo/logo.svg" alt="Logo" class="footer-logo">
+        <nav class="footer-menu">
+    <a href="/index.html" class="footer-link-main">Home</a>
+    <a href="/about.html" class="footer-link">About</a>
+    <a href="/pricing.html" class="footer-link">Pricing</a>
+    <a href="/contact.html" class="footer-link">Contact</a>
+  </nav>
+  <div class="footer-signup">
+    <div class="signup-form">
+      <div class="input-with-icon">
+        <img src="img/mail.svg" alt="Email" class="email-icon">
+        <input type="email" placeholder="Enter your email & join us" class="signup-input custom-placeholder">
+        <button class="signup-button">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Menu Start -->
+
+  <!-- Footer Menu End -->
+</div>
         <div class="footer-contact">
           <p class="copyright"> A recruitment partner for the logistics world.</p>
         </div>
