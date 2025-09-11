@@ -354,13 +354,79 @@
       </div>
     </footer>
     <script>
-      // Mobile menu toggle
-      const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-      const navMenu = document.querySelector(".nav-menu");
+      // Mobile menu toggle with animation
+      const toggle = document.querySelector(".mobile-menu-toggle");
+      const menu = document.querySelector(".nav-menu");
 
-      mobileMenuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        toggle.classList.toggle("active");
       });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll(".nav-menu a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.remove("active");
+          toggle.classList.remove("active");
+        });
+      });
+      // Custom Cursor Implementation
+      (function () {
+        // Check if device is desktop (not mobile/tablet)
+        function isDesktop() {
+          return window.innerWidth > 1024 && !("ontouchstart" in window);
+        }
+
+        // Only initialize cursor on desktop devices
+        if (isDesktop()) {
+          // Set custom cursor for the entire document (general cursor)
+          document.body.style.cursor = "url('img/hover/cursor.png'), auto";
+
+          // Set pointer cursor for clickable elements
+          const clickableElements = document.querySelectorAll(
+            'a, button, .cta-button, .learn-more, .signup-button, .mobile-menu-toggle, input[type="email"], .nav-link, .nav-link-others, .nav-contact-btn, .footer-link, .footer-link-main'
+          );
+
+          clickableElements.forEach((element) => {
+            element.style.cursor = "pointer";
+          });
+
+          // Handle window resize to check if still desktop
+          window.addEventListener("resize", function () {
+            if (!isDesktop()) {
+              // Remove custom cursor on mobile/tablet
+              document.body.style.cursor = "auto";
+              clickableElements.forEach((element) => {
+                element.style.cursor = "auto";
+              });
+            } else {
+              // Reapply custom cursor on desktop
+              document.body.style.cursor = "url('img/hover/cursor.png'), auto";
+              clickableElements.forEach((element) => {
+                element.style.cursor = "pointer";
+              });
+            }
+          });
+
+          // Optional: Add CSS rule for better browser compatibility
+          const style = document.createElement("style");
+          style.textContent = `
+            * {
+                cursor: url('img/hover/cursor.png'), auto !important;
+            }
+            a, button, .cta-button, .learn-more, .signup-button, .mobile-menu-toggle, 
+            input[type="email"], .nav-link, .nav-link-others, .nav-contact-btn, 
+            .footer-link, .footer-link-main, [role="button"], [onclick] {
+                cursor: pointer !important;
+            }
+            input[type="text"], input[type="email"], textarea {
+                cursor: text !important;
+            }
+        `;
+          document.head.appendChild(style);
+        }
+      })();
     </script>
   </body>
 </html>
