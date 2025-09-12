@@ -30,29 +30,6 @@
         overflow-x: hidden;
       }
 
-      .iti--separate-dial-code .iti__selected-flag {
-        background-color: rgba(0, 0, 0, 0);
-        cursor: pointer !important;
-      }
-      .iti__country {
-        cursor: pointer !important;
-      }
-      .iti--allow-dropdown .iti__flag-container:hover {
-        cursor: pointer !important;
-      }
-      .iti__flag-box,
-      .iti__country-name {
-        margin-right: 6px;
-        cursor: pointer !important;
-      }
-      .iti__dial-code {
-        cursor: pointer !important;
-      }
-
-      .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
-        background-color: rgba(0, 0, 0, 0);
-      }
-
       .navbar {
         position: fixed;
         top: 0;
@@ -459,9 +436,9 @@
       }
 
       .error-message {
-        background-color: #1d9a8a;
-        color: #fff;
-        border: 1px solid #000000;
+        background-color: #fef2f2;
+        color: #991b1b;
+        border: 1px solid #fca5a5;
       }
 
       .footer {
@@ -517,13 +494,7 @@
 
       .footer-signup {
         margin-top: 20px;
-        width: 100%;
-        max-width: 500px;
-      }
-      @media (max-width: 1100px) {
-        .footer-signup {
-          width: 100%;
-        }
+        width: 65%;
       }
 
       .input-with-icon {
@@ -810,7 +781,7 @@
       .contact-details .contact-phone {
         display: flex;
         align-items: flex-start; /* top-align when details wrap */
-        gap: 5px; /* space between label and link */
+        gap: 8px; /* space between label and link */
         margin: 0; /* remove default <p> margins */
       }
 
@@ -818,7 +789,7 @@
         color: #0a1e27;
         font-weight: 600;
         font-size: 18px;
-        min-width: auto; /* fixed width so labels align */
+        min-width: 110px; /* fixed width so labels align */
         flex-shrink: 0;
       }
 
@@ -919,13 +890,15 @@
             </div>
             <div class="contact-details">
               <p class="contact-phone">
-                <span class="contact-phone-label">Telephone:</span>
+                <span class="contact-phone-label">Telephone&nbsp;&nbsp;:</span>
                 <a href="tel:+97172046947" class="contact-phone-link"
                   >+ 9717 204 6947</a
                 >
               </p>
               <p class="contact-phone">
-                <span class="contact-phone-label">Address:</span>
+                <span class="contact-phone-label"
+                  >Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span
+                >
                 <a href="#" class="contact-phone-link">
                   FDRK3775 Compass Building ALShohada Road RAK 10055 United Arab
                   Emirates
@@ -941,8 +914,8 @@
               to you soon.
             </div>
             <div id="errorMessage" class="message error-message">
-              Thank you! Your message has been sent successfully. We'll get back
-              to you soon.
+              Sorry, there was an error sending your message. Please try again
+              or contact us directly.
             </div>
 
             <form
@@ -1301,63 +1274,6 @@
 
       messageObserver.observe(successMessage, { attributes: true });
       messageObserver.observe(errorMessage, { attributes: true });
-
-      // Custom Cursor Implementation
-      (function () {
-        // Check if device is desktop (not mobile/tablet)
-        function isDesktop() {
-          return window.innerWidth > 1024 && !("ontouchstart" in window);
-        }
-
-        // Only initialize cursor on desktop devices
-        if (isDesktop()) {
-          // Set custom cursor for the entire document (general cursor)
-          document.body.style.cursor = "url('img/hover/cursor.png'), auto";
-
-          // Set pointer cursor for clickable elements
-          const clickableElements = document.querySelectorAll(
-            'a, button, .cta-button, .learn-more, .signup-button, .mobile-menu-toggle, input[type="email"], .nav-link, .nav-link-others, .nav-contact-btn, .footer-link, .footer-link-main'
-          );
-
-          clickableElements.forEach((element) => {
-            element.style.cursor = "pointer";
-          });
-
-          // Handle window resize to check if still desktop
-          window.addEventListener("resize", function () {
-            if (!isDesktop()) {
-              // Remove custom cursor on mobile/tablet
-              document.body.style.cursor = "auto";
-              clickableElements.forEach((element) => {
-                element.style.cursor = "auto";
-              });
-            } else {
-              // Reapply custom cursor on desktop
-              document.body.style.cursor = "url('img/hover/cursor.png'), auto";
-              clickableElements.forEach((element) => {
-                element.style.cursor = "pointer";
-              });
-            }
-          });
-
-          // Optional: Add CSS rule for better browser compatibility
-          const style = document.createElement("style");
-          style.textContent = `
-            * {
-                cursor: url('img/hover/cursor.png'), auto !important;
-            }
-            a, button, .cta-button, .learn-more, .signup-button, .mobile-menu-toggle, 
-            input[type="email"], .nav-link, .nav-link-others, .nav-contact-btn, 
-            .footer-link, .footer-link-main, [role="button"], [onclick] {
-                cursor: pointer !important;
-            }
-            input[type="text"], input[type="email"], textarea {
-                cursor: text !important;
-            }
-        `;
-          document.head.appendChild(style);
-        }
-      })();
     </script>
   </body>
 </html>

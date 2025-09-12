@@ -36,6 +36,7 @@ body {
 .logo img {
   width: 175px;
   height: 80px;
+  cursor: pointer !important;
 }
 
 .nav-menu {
@@ -150,7 +151,8 @@ body {
   background: url("/img/bg.png") center/cover no-repeat;
   display: flex;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 118px;
+  background-color: #d0dde3;
 }
 
 .container {
@@ -440,12 +442,13 @@ body {
   width: 160px;
   height: 70px;
   margin-left: -10px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .footer-signup {
   margin-top: 20px;
-  width: 65%;
+  width: 100%;
+  max-width: 500px;
 }
 
 .input-with-icon {
@@ -824,18 +827,8 @@ body {
   text-decoration: none;
 }
 
-@media (min-width: 1024px) and (hover: hover) {
-  html,
-  body {
-    cursor: url("../img/hover/cursor.svg") 16 16, auto !important;
-  }
-
-  a,
-  button,
-  input[type="button"],
-  input[type="submit"],
-  .nav-contact-btn,
-  .cta-button {
-    cursor: pointer;
+@media (max-width: 1100px) {
+  .footer-signup {
+    width: 100%;
   }
 }
