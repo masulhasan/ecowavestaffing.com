@@ -13,6 +13,32 @@ body {
   overflow-x: hidden;
 }
 
+/* Fade-up Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.fade-up:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.fade-up:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.fade-up:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.fade-up:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -63,7 +89,6 @@ body {
   position: relative;
 }
 
-/* Add this to your <style> section */
 .nav-contact-btn {
   display: inline-block;
   padding: 5px 20px;
@@ -83,7 +108,6 @@ body {
   border-color: #059a89;
 }
 
-/* Fix for preventing layout shift on hover */
 .nav-link-others::before {
   content: attr(data-text);
   font-weight: 600;
@@ -104,7 +128,6 @@ body {
   font-weight: 600;
 }
 
-/* Mobile menu */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -148,7 +171,8 @@ body {
 /* Hero section */
 .hero-section {
   height: 90vh;
-  background: url("/img/bg.png") center/cover no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/masulhasan/ecowavestaffing.com@main/img/bg.png")
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -324,7 +348,7 @@ body {
   font-weight: bold;
 }
 
-/* How It Works Section - IMPROVED RESPONSIVE VERSION */
+/* How It Works Section */
 .how-it-works-section {
   padding: 100px 0;
   background-color: white;
@@ -393,7 +417,6 @@ body {
   color: black;
 }
 
-/* Large Desktop Responsive */
 @media (min-width: 1200px) {
   .process-steps {
     grid-template-columns: repeat(2, 1fr);
@@ -405,7 +428,6 @@ body {
   }
 }
 
-/* Desktop Responsive */
 @media (max-width: 1199px) and (min-width: 901px) {
   .process-steps {
     grid-template-columns: repeat(2, 1fr);
@@ -556,12 +578,11 @@ body {
   color: black;
 }
 
-/* Add to your <style> section */
 .footer-menu {
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  column-gap: 30px; /* 30px gap between columns */
-  row-gap: 10px; /* less gap between rows */
+  column-gap: 30px;
+  row-gap: 10px;
   margin-top: 20px;
   margin-bottom: 30px;
   max-width: 350px;
@@ -569,7 +590,7 @@ body {
 
 .footer-link {
   flex: 1 1 45%;
-  max-width: 150px; /* Set max width for each link */
+  max-width: 150px;
   color: #ffffff;
   font-family: "canada-type-gibson", sans-serif;
   font-size: 20px;
@@ -579,7 +600,7 @@ body {
 }
 .footer-link-main {
   flex: 1 1 45%;
-  max-width: 150px; /* Set max width for each link */
+  max-width: 150px;
   color: #ffffff;
   font-family: "canada-type-gibson", sans-serif;
   font-size: 20px;
@@ -594,8 +615,7 @@ body {
   font-family: "canada-type-gibson", sans-serif;
 }
 
-/* Extra mobile responsiveness */
-
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .container-mobile {
     width: 95%;
@@ -604,7 +624,6 @@ body {
     width: 100%;
   }
 
-  /* Navbar */
   .nav-container {
     height: 70px;
     margin: 0px 0px 0px -1px;
@@ -615,7 +634,6 @@ body {
     height: auto;
   }
 
-  /* Hero */
   .hero-section {
     height: auto;
     padding: 60px 0 10px;
@@ -647,7 +665,6 @@ body {
     font-size: 14px;
   }
 
-  /* Offshore section */
   .offshore-section {
     padding: 25px 0px;
   }
@@ -667,7 +684,6 @@ body {
     line-height: 17px;
   }
 
-  /* Solutions grid */
   .solutions-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -703,7 +719,6 @@ body {
     font-weight: 400;
   }
 
-  /* How it works */
   .how-it-works-section {
     display: none;
   }
@@ -740,7 +755,6 @@ body {
     padding: 20px 20px 25px 20px;
   }
 
-  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: left;
@@ -783,7 +797,6 @@ body {
   }
 }
 
-/* Show mobile-bg-section only on mobile screens */
 .mobile-bg-section {
   display: none;
 }
@@ -795,7 +808,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #d0dde3; /* Optional: Match the hero section background */
+    background-color: #d0dde3;
   }
   .mobile-bg-img {
     width: 100%;
@@ -831,4 +844,13 @@ body {
   .footer-signup {
     width: 100%;
   }
+}
+
+.solution-card.red:hover {
+  transform: translateX(0px) translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+.solution-card.black:hover {
+  transform: translateX(0px) translateY(-10px);
+  transition: transform 0.3s ease-in-out;
 }

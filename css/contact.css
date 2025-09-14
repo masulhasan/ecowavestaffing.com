@@ -12,6 +12,29 @@ body {
   overflow-x: hidden;
 }
 
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer !important;
+}
+.iti__country {
+  cursor: pointer !important;
+}
+.iti--allow-dropdown .iti__flag-container:hover {
+  cursor: pointer !important;
+}
+.iti__flag-box,
+.iti__country-name {
+  margin-right: 6px;
+  cursor: pointer !important;
+}
+.iti__dial-code {
+  cursor: pointer !important;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -19,6 +42,32 @@ body {
   right: 0;
   background: #0a1e27;
   z-index: 1000;
+}
+
+/* Fade-up Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.fade-up:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.fade-up:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.fade-up:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.fade-up:nth-child(4) {
+  transition-delay: 0.4s;
 }
 
 .nav-container {
@@ -53,7 +102,6 @@ body {
 .logo img {
   width: 175px;
   height: 80px;
-  cursor: pointer !important;
 }
 
 .nav-menu {
@@ -125,7 +173,8 @@ body {
 
 .hero-section {
   height: 90vh;
-  background: url("../img/contact/contact-bg.png") center/cover no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/masulhasan/ecowavestaffing.com@main/img/contact/contact-bg.png")
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -139,21 +188,6 @@ body {
 
 .iti--separate-dial-code .iti__selected-flag {
   background-color: rgba(0, 0, 0, 0);
-  cursor: pointer !important;
-}
-.iti__country {
-  cursor: pointer !important;
-}
-.iti--allow-dropdown .iti__flag-container:hover {
-  cursor: pointer !important;
-}
-.iti__flag-box,
-.iti__country-name {
-  margin-right: 6px;
-  cursor: pointer !important;
-}
-.iti__dial-code {
-  cursor: pointer !important;
 }
 .hero-content {
   color: black;
@@ -374,7 +408,7 @@ select {
   background-repeat: no-repeat;
   background-size: 16px;
   padding-right: 40px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 textarea {
@@ -414,6 +448,29 @@ textarea {
   background-color: #9ca3af;
   cursor: not-allowed;
   transform: none;
+}
+
+/* Success/Error Message Styles */
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  display: none;
+}
+
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.error-message {
+  background-color: #1d9a8a;
+  color: #fff;
+  border: 1px solid #000000;
 }
 
 .footer {
@@ -470,7 +527,13 @@ textarea {
 
 .footer-signup {
   margin-top: 20px;
-  width: 65%;
+  width: 100%;
+  max-width: 500px;
+}
+@media (max-width: 1100px) {
+  .footer-signup {
+    width: 100%;
+  }
 }
 
 .input-with-icon {
@@ -757,7 +820,7 @@ textarea {
 .contact-details .contact-phone {
   display: flex;
   align-items: flex-start; /* top-align when details wrap */
-  gap: 8px; /* space between label and link */
+  gap: 5px; /* space between label and link */
   margin: 0; /* remove default <p> margins */
 }
 
@@ -765,7 +828,7 @@ textarea {
   color: #0a1e27;
   font-weight: 600;
   font-size: 18px;
-  min-width: 110px; /* fixed width so labels align */
+  min-width: auto; /* fixed width so labels align */
   flex-shrink: 0;
 }
 

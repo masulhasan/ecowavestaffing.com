@@ -12,6 +12,32 @@ body {
   overflow-x: hidden;
 }
 
+/* Fade-up Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.fade-up:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.fade-up:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.fade-up:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.fade-up:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -138,7 +164,8 @@ body {
 
 .hero-section {
   height: 90vh;
-  background: url("../img/about-bg.png") center/cover no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/masulhasan/ecowavestaffing.com@main/img/about-bg.png")
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -895,4 +922,13 @@ body {
   .mobile-bg-section {
     display: none;
   }
+}
+
+.process-step-black:hover {
+  transform: translateX(0px) translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+.process-step-green:hover {
+  transform: translateX(0px) translateY(-10px);
+  transition: transform 0.3s ease-in-out;
 }

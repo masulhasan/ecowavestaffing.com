@@ -13,6 +13,37 @@ body {
   overflow-x: hidden;
 }
 
+/* Fade-up Animation Styles */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays */
+.fade-up:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.fade-up:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.fade-up:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.fade-up:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.pricing-card:hover {
+  transform: translateX(0px) translateY(-10px);
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -146,7 +177,8 @@ body {
 /* Hero section */
 .hero-section {
   height: 90vh;
-  background: url("../img/pricing/pricing.jpg") center/cover no-repeat;
+  background: url("https://cdn.jsdelivr.net/gh/masulhasan/ecowavestaffing.com@main/img/pricing/pricing.jpg")
+    center/cover no-repeat;
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -378,12 +410,9 @@ body {
 }
 
 .feature-icon {
-
   margin-right: 16px;
   padding-top: 4px;
 }
-
-
 
 .cta-button {
   background: rgba(0, 0, 0, 0.15);
