@@ -102,6 +102,7 @@ body {
 .logo img {
   width: 175px;
   height: 80px;
+  cursor: pointer !important;
 }
 
 .nav-menu {
