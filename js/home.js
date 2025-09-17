@@ -79,3 +79,32 @@ fadeUpElements.forEach((el) => observer.observe(el));
     document.head.appendChild(style);
   }
 })();
+
+// Hero background carousel
+const slides = document.querySelectorAll(".hero-bg-slide");
+let currentSlide = 0;
+
+function showNextSlide() {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}
+
+setInterval(showNextSlide, 3000);
+
+// Mobile background carousel
+const mobileSlides = document.querySelectorAll(
+  ".mobile-bg-section .mobile-bg-img"
+);
+let mobileSlideIndex = 0;
+
+function showNextMobileSlide() {
+  mobileSlides[mobileSlideIndex].classList.remove("active");
+  mobileSlideIndex = (mobileSlideIndex + 1) % mobileSlides.length;
+  mobileSlides[mobileSlideIndex].classList.add("active");
+}
+
+// Only run this on small screens
+if (window.innerWidth <= 768 && mobileSlides.length > 1) {
+  setInterval(showNextMobileSlide, 3000); // 5 seconds
+}

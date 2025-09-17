@@ -102,6 +102,7 @@ body {
 .logo img {
   width: 175px;
   height: 80px;
+  cursor: pointer !important;
 }
 
 .nav-menu {
@@ -173,8 +174,7 @@ body {
 
 .hero-section {
   height: 90vh;
-  background: url("https://cdn.jsdelivr.net/gh/masulhasan/ecowavestaffing.com@main/img/contact/contact-bg.png")
-    center/cover no-repeat;
+  background: url("../img/contact/contact-bg.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -236,7 +236,7 @@ body {
 
 /* Contact Section Styles */
 .contact-section {
-  background-color: #f5f7fa;
+  background-color: #fff;
   padding: 100px 0;
 }
 
@@ -624,6 +624,10 @@ textarea {
     width: 100%;
   }
 
+  .contact-points li::before {
+    margin-top: 3px;
+  }
+
   /* Navbar */
   .nav-container {
     height: 70px;
@@ -716,7 +720,7 @@ textarea {
     padding: 30px 0;
   }
   .contact-points li {
-    align-items: center;
+    align-items: flex-start;
   }
   .contact-flex {
     flex-direction: column;
@@ -834,8 +838,12 @@ textarea {
 
 .contact-details .contact-phone-link {
   text-decoration: none;
-  color: #0a1e27;
+  color: #0a1e27 !important;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.4;
+}
+
+.contact-phone-link a {
+  color: #0a1e27 !important;
 }
